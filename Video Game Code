@@ -1,0 +1,105 @@
+//variables used in the program
+var titleNumber = 0;
+var releaseDates = getColumn("Best Selling Video Games", "Initial release date");
+var sales = getColumn("Best Selling Video Games", "Sales");
+var releaseDate;
+var sale;
+//events that would use the data table 
+//when a button would be pressed,a function would happen where it would grab some information
+//from the data table to then set the information into a variable and print the next with the new 
+//variable value
+onEvent("newestGame","click",function(){
+  for(var i = 0; i < releaseDates.length; i++){
+    releaseDate = releaseDates[1];
+      setText("label4", "GTA Release on " + releaseDate);
+  }
+});
+onEvent("oldestGame","click",function(){
+  for(var i = 0; i < releaseDates.length; i++){
+    releaseDate = releaseDates[i];
+      setText("label4", "Tetris released on " + releaseDate);
+  }
+});
+onEvent("highSales","click",function(){
+  for(var i = 0; i < sales.length; i++){
+    sale = sales[0];
+      setText("label4", "Minecraft has " + sale +" copies sold");
+  }
+});
+onEvent("lowSales","click",function(){
+  for(var i = 0; i < sales.length; i++){
+    sale = sales[i];
+      setText("label4", "Tetris has " + sale +" copies sold");
+  }
+});
+
+onEvent("top3Button", "click", function( ) {
+  stopSound();
+  setScreen("listScreen");
+});
+//settings button code 
+//basically with the power of math it is able to cycle between the different background options 
+//and music that is in it because everytime you press the button it would add a 1 to a variable
+//and onces that varible hits a certain value it will change the screen/music and it will reset at the end
+onEvent("button4", "click", function( ) {
+  titleNumber = titleNumber+1;
+  if (titleNumber == 1) {
+    setProperty("titleScreen","image","https://cdn.mos.cms.futurecdn.net/52K7sgnQLSJ8ggfyfvz9yB.jpg");
+    stopSound();
+    playSound("yt5s.com---Minecraft-(128-kbps).mp3");
+  }else if(titleNumber == 2){
+    setProperty("titleScreen", "image","https://cdn.vox-cdn.com/thumbor/PzYJ-3lX9YE9MbrgmhdB1O8fbvM=/181x0:919x492/1400x1050/filters:focal(181x0:919x492):format(png)/cdn.vox-cdn.com/assets/775265/gta-v-city-bkgd.png");
+    stopSound();
+    playSound("yt5s.com---GTA-V---Welcome-to-Los-Santos-Soundtrack---Intro_Theme-song-(192-kbps).mp3");
+  }else if (titleNumber == 3){
+      setProperty("titleScreen", "image","https://t4.ftcdn.net/jpg/02/12/34/87/360_F_212348726_9aFVfkGDmtghn72luc5zIGpOJgQcuEVu.jpg");
+    stopSound();
+      playSound("yt5s.com---Tetris-99---Main-Theme-(128-kbps).mp3");
+  }else if(titleNumber ==4){
+      titleNumber = titleNumber - 3;
+      setProperty("titleScreen","image","https://cdn.mos.cms.futurecdn.net/52K7sgnQLSJ8ggfyfvz9yB.jpg");
+      stopSound();
+      playSound("yt5s.com---Minecraft-(128-kbps).mp3");
+      
+    }
+});
+//just the scroll buttons used in the app
+//these buttons are used to return to the title/home screen of the app or navigate 
+//into some parts of the app.
+onEvent("playButton", "click", function( ) {
+  stopSound();
+  titleNumber = 0;
+  setScreen("overviewScreen");
+  });
+onEvent("GTAButton", "click", function( ) {
+  setScreen("gtaScreen");
+  playSound("yt5s.com---GTA-V---Welcome-to-Los-Santos-Soundtrack---Intro_Theme-song-(192-kbps).mp3");
+  });
+onEvent("minecraftButton", "click", function( ) {
+  setScreen("minecraftScreen");
+  playSound("yt5s.com---Minecraft-(128-kbps).mp3");
+  });
+onEvent("tetriButton", "click", function( ) {
+  setScreen("tetrisScreen");
+  playSound("yt5s.com---Tetris-99---Main-Theme-(128-kbps).mp3");
+  });
+onEvent("gtaReturn", "click", function( ) {
+  restart();
+  stopSound();
+});
+onEvent("minecraftReturn", "click", function( ) {
+  restart();
+  stopSound();
+});
+onEvent("tetrisReturn", "click", function( ) {
+  restart();
+  stopSound();
+});
+onEvent("listReturn", "click", function( ) {
+  restart();
+});
+//The function that return user to the title screen
+var restart;
+function restart(){
+  setScreen("titleScreen");
+}
