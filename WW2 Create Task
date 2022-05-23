@@ -1,0 +1,25 @@
+var years = getColumn("US WW2 Battles", "years");
+var names = getColumn("US WW2 Battles", "names");
+var battlesInYear = [];
+
+function battleIdentification(year){
+  for (var i = 0; i < years.length; i++){
+    if(years[i] == year){
+      appendItem(battlesInYear, names[i]);
+    }
+  }
+}
+
+//When the home button is clicked the home screen 
+onEvent("homeButton", "click", function( ){
+  setScreen("homeScreen");
+  setProperty("text_area1", "text", "");
+  battlesInYear = [];
+});
+//When the go button is clicked the battle screen
+onEvent("goButton", "click", function( ){
+  var chosenYear = getProperty("yearDropdown", "text");
+  battleIdentification(chosenYear);
+  setScreen("battleScreen");
+  setText("text_area1", battlesInYear);
+});
