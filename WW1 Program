@@ -1,0 +1,90 @@
+onEvent("atlanticButton", "click", function( ) {
+	setScreen("atlanticScreeen");
+	playSound("sound://category_background/ocean_waves.mp3", false);
+});
+onEvent("returnHomeATL", "click", function( ) {
+	setScreen("homeScreen");
+	stopSound("sound://category_background/ocean_waves.mp3");
+});
+onEvent("europeButton", "click", function( ) {
+  setScreen("euroScreen");
+  playSound("sound://category_explosion/retro_game_classic_explosion_1.mp3", false);
+});
+onEvent("returnHomeEU", "click", function( ) {
+  setScreen("homeScreen");
+});
+onEvent("asiaButton", "click", function( ) {
+  setScreen("asiaScreen");
+});
+onEvent("returnButtonASIA", "click", function( ) {
+  setScreen("homeScreen");
+});
+onEvent("africaButton", "click", function( ) {
+  setScreen("africanScreen");
+});
+onEvent("returnButtonAF", "click", function( ) {
+  setScreen("homeScreen");
+});
+onEvent("russiaButton", "click", function( ) {
+  setScreen("russianScreen");
+});
+onEvent("returnButtonRU", "click", function( ) {
+  setScreen("homeScreen");
+});
+onEvent("quizButton", "click", function( ) {
+  setScreen("quizPage1");
+});
+onEvent("wrongReturn", "click", function( ) {
+  setScreen("homeScreen");
+});
+onEvent("wrong1,1", "click", function( ) {
+  setScreen("wrongPage");
+});
+onEvent("wrong1,2", "click", function( ) {
+  setScreen("wrongPage");
+});
+onEvent("wrong1,3", "click", function( ) {
+  setScreen("wrongPage");
+});
+onEvent("correct1", "click", function( ) {
+  setScreen("quizPage2");
+});
+onEvent("wrong2,1", "click", function( ) {
+  setScreen("wrongPage");
+});
+onEvent("wrong2,2", "click", function( ) {
+  setScreen("wrongPage");
+});
+onEvent("wrong2,3", "click", function( ) {
+  setScreen("wrongPage");
+});
+onEvent("correct2", "click", function( ) {
+  setScreen("quizPage3");
+});
+onEvent("incorrect3,1", "click", function( ) {
+  setScreen("wrongPage");
+});
+onEvent("incorrect3,2", "click", function( ) {
+  setScreen("wrongPage");
+});
+onEvent("correct3", "click", function( ) {
+  setScreen("quizPage4");
+});
+onEvent("incorrect4,1", "click", function( ) {
+  setScreen("wrongPage");
+});
+onEvent("incorrect4,2", "click", function( ) {
+  setScreen("wrongPage");
+});
+onEvent("correct4", "click", function( ) {
+  setScreen("quizPage5");
+});
+onEvent("correct5", "click", function( ) {
+  setScreen("missionCompletepage");
+});
+onEvent("incorrect5,1", "click", function( ) {
+  setScreen("wrongPage");
+});
+onEvent("returnHome", "click", function( ) {
+  setScreen("homeScreen");
+});
